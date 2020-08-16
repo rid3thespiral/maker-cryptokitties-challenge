@@ -1,5 +1,7 @@
 const url = "https://mainnet.infura.io/v3/293d4a9cac5047e6b9ed5eb54fac669a";
 const startingBlock = 6607985;
+const sb2 = 6607986;
+const sb2hex = '0x'+sb2.toString(16);
 const endingBlock = 7028323;
 const axios = require('axios');
 const startingBlockHex = '0x'+startingBlock.toString(16);
@@ -11,8 +13,8 @@ axios.post(url, {
     "method":"eth_getLogs",
     "params":[
         {
-            "fromBlock": "0x64d471",
-            "toBlock": "0x64d472",
+            "fromBlock": startingBlockHex,
+            "toBlock": sb2hex,
         }],
         "id":1
     }
